@@ -1,0 +1,5 @@
+<% if current_user.favorited_by?(micropost.id) %>
+    <%= link_to 'いいね外す', destroy_favorite_path(micropost), method: :DELETE %>　<%= micropost.favorites.count %>
+<% else %>
+    <%= link_to 'いいねする', create_favorite_path(micropost), method: :POST %>　<%= micropost.favorites.count %>
+<% end %>

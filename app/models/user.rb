@@ -9,7 +9,8 @@ class User < ApplicationRecord
   has_secure_password
   validates :password, presence: true, length: { minimum: 6 }, allow_nil: true
   has_many :microposts
-  
+  has_many :favorites
+  has_many :favorite_microposts, through: :favorites
   def User.digest(string)
     cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
                                                   BCrypt::Engine.cost
@@ -35,5 +36,9 @@ class User < ApplicationRecord
   
   def forget
     update_attribute(:remember_digest, nil)
+  end
+  
+  def favorited_by?(micropost_id)
+  favorites.where(micropost_id: micropost_id).exists?
   end
 end
