@@ -1,0 +1,7 @@
+<hi>Search</hi>
+<%= form_tag(search_path,:method => 'get') do %>
+  <%= text_field_tag :search %>
+  <%= submit_tag 'Search', :place => nil %>
+<% end %>
+
+<%= render 'microposts/microposts', microposts: @microposts %>

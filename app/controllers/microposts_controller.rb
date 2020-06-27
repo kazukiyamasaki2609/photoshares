@@ -2,6 +2,10 @@ class MicropostsController < ApplicationController
   before_action :require_user_logged_in
   before_action :correct_user, only: [:destroy]
   
+  def index
+      @microposts=Micropost.all.page(params[:page]).search(params[:search])
+      @microposts = Micropost.all.order(id: :desc).page(params[:page]).per(30)
+  end
   
   def new
   end

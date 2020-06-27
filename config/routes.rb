@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   root 'toppages#home'
+  get 'search', to: 'microposts#index'
   get 'post', to: 'microposts#new'
   post 'post', to: 'microposts#create'
   get 'signup', to: 'users#new'
