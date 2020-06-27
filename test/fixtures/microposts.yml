@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  content: MyString
+  place: MyString
+  time: MyString
+  move: MyString
+  necessary: 
+  user: one
+
+two:
+  content: MyString
+  place: MyString
+  time: MyString
+  move: MyString
+  necessary: 
+  user: two
