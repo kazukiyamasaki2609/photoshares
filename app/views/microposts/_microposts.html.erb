@@ -1,6 +1,7 @@
 <ul class="list-unstyled">
   <% microposts.each do |micropost| %>
   <li class='text-center'>
+    <%= image_tag micropost.image.url %>
    <div>
     　　<div class="form-group">
            <p>撮影日時</p>

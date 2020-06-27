@@ -30,8 +30,8 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'faker',  '2.1.2'
 gem 'rails-controller-testing'
 # Use ActiveStorage variant
-# gem 'mini_magick', '~> 4.8'
-
+gem 'mini_magick', '~> 4.8'
+gem 'carrierwave'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

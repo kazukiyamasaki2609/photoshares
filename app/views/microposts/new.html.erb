@@ -1,6 +1,8 @@
 
 <div>
       <%= form_with(model: @micropost, local: true) do |f| %>
+      
+        <%= f.file_field :image %>
         
           <div class='form-group'>
             <p>撮影日時</p>
