@@ -16,7 +16,7 @@ class MicropostsController < ApplicationController
       flash[:success]='I posted a message.'
       redirect_to root_url
     else
-      @microposts=current_user.microposts.order(id::desc).page(params[:page])
+      @microposts=current_user.microposts
       flash.now[:danger]='Failed to post the message.'
       render 'toppages/home'
     end
@@ -24,7 +24,7 @@ class MicropostsController < ApplicationController
 
   def destroy
     @micropost.destroy
-    flash[:success] = 'メッセージを削除しました。'
+    flash[:success] = 'Message deleted'
     redirect_back(fallback_location: root_path)
   end
   

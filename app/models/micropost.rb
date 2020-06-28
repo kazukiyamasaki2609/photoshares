@@ -1,12 +1,13 @@
 class Micropost < ApplicationRecord
-  mount_uploader :image, ImageUploader
+  has_many :favorites
   belongs_to :user
    validates :content, presence: true, length: { maximum: 255 }
    validates :necessary, presence: true, length: { maximum: 150 }
    validates :place, presence: true, length: { maximum: 150 }
    validates :move, presence: true, length: { maximum: 100 }
    validates :time, presence: true
-   has_many :favorites
+   validates :image, presence: true
+   mount_uploader :image, ImageUploader
     def self.search(search)
       if search
         Micropost.where(['place LIKE ?', "%#{search}%"])

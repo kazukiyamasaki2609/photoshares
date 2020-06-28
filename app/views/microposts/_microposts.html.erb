@@ -3,29 +3,36 @@
   <li class='text-center'>
    <div>
      <p><%= image_tag micropost.image.url %></p>
+     
+       <div class="form-group">
+           <p>撮影時間</p>
+          <%= micropost.time %>
+       </div>
+       
        <div class="form-group">
           <p>撮影場所</p>
           <%= micropost.place %>
-        </div>
-         <div class="form-group">
+       </div>
+       
+       <div class="form-group">
            <p>移動手段</p>
           <%= micropost.move %>
-        </div>
-         <div class="form-group">
-           <p>撮影時間</p>
-          <%= micropost.time %>
-        </div>
-         <div class="form-group">
+       </div>
+         
+       <div class="form-group">
            <p>必要な物</p>
           <%= micropost.necessary %>
-        </div>
-         <div class="form-group">
+       </div>
+        
+        <div class="form-group">
            <p>コメント</p>
           <%= micropost.content %>
         </div>
+        
         <div>
         <%= render 'favorites/likes', micropost: micropost %>
         </div>
+        
          <div>
           <% if current_user == micropost.user %>
             <%= link_to "Delete", micropost, method: :delete, data: { confirm: "You sure?" }, class: 'btn btn-danger btn-sm' %>
