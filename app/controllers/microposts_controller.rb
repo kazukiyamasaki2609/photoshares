@@ -3,8 +3,7 @@ class MicropostsController < ApplicationController
   before_action :correct_user, only: [:destroy]
   
   def index
-      @microposts=Micropost.all.page(params[:page]).search(params[:search])
-      @microposts = Micropost.all.order(id: :desc).page(params[:page]).per(30)
+       @micropost = Micropost.search(params[:search]).order(id: :desc).page(params[:page]).per(30)
   end
   
   def new
@@ -40,6 +39,4 @@ class MicropostsController < ApplicationController
       redirect_to root_url
     end
   end
-
-
 end

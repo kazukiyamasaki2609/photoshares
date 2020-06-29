@@ -41,4 +41,5 @@ class User < ApplicationRecord
   def favorited_by?(micropost_id)
   favorites.where(micropost_id: micropost_id).exists?
   end
+  
 end

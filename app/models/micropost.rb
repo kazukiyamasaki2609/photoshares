@@ -8,11 +8,12 @@ class Micropost < ApplicationRecord
    validates :time, presence: true
    validates :image, presence: true
    mount_uploader :image, ImageUploader
-    def self.search(search)
-      if search
-        Micropost.where(['place LIKE ?', "%#{search}%"])
-      else
-        Micropost.all
-      end
-    end
+   
+  def self.search(search) #self.はUser.を意味する
+     if search
+       where(['place LIKE ?', "%#{search}%"]) #検索とuseanameの部分一致を表示。
+     else
+       Micropost.all #全て表示させる
+     end
+  end
 end

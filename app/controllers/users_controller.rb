@@ -3,6 +3,7 @@ class UsersController < ApplicationController
   before_action :correct_user,   only: [:edit, :update]
   
   def index
+     @search = User.ransack(params[:q])
     @users=User.all.order(id: :desc).page(params[:page]).per(30)
   end
   
