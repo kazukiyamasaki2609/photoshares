@@ -1,24 +1,16 @@
-# README
+# Photoshares
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+写真共有サービス
 
-Things you may want to cover:
+*　ユーザー登録機能
+*　ユーザー編集機能
+*  ログイン/ログアウト機能
+* 　認証機能
+* 　記事投稿機能
+* 　画像アップロード機能
+*  記事一覧表示/検索機能
+* 　いいね機能
+* 　ページネーション機能
 
-* Ruby version
 
-* System dependencies
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
